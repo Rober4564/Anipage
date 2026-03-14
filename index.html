@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anipage Explorer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-glow"></div>
+    <header class="hero">
+      <nav class="top-nav">
+        <h1>Anipage Explorer</h1>
+        <p>Descubre animes y personajes con AniList + Jikan</p>
+      </nav>
+
+      <section class="search-grid">
+        <article class="panel">
+          <h2>Buscar anime</h2>
+          <form id="anime-search-form" class="search-form">
+            <input
+              id="anime-query"
+              type="text"
+              placeholder="Ej: Fullmetal Alchemist"
+              required
+            />
+            <button type="submit">Buscar</button>
+          </form>
+          <div id="anime-results" class="results"></div>
+        </article>
+
+        <article class="panel">
+          <h2>Buscar personaje</h2>
+          <form id="character-search-form" class="search-form">
+            <input id="character-query" type="text" placeholder="Ej: Naruto" required />
+            <button type="submit">Buscar</button>
+          </form>
+          <div id="character-results" class="results"></div>
+        </article>
+      </section>
+    </header>
+
+    <main class="content">
+      <section>
+        <div class="section-title">
+          <h2>Top 10 anime del momento</h2>
+          <span id="top-status" class="status-pill">Cargando...</span>
+        </div>
+        <div id="top-anime" class="card-grid"></div>
+      </section>
+
+      <section id="details" class="details hidden" aria-live="polite"></section>
+    </main>
+
+    <template id="anime-card-template">
+      <article class="anime-card">
+        <img class="cover" alt="Portada" />
+        <div class="card-body">
+          <h3></h3>
+          <p class="meta"></p>
+          <p class="description"></p>
+          <button class="open-details">Ver información completa</button>
+        </div>
+      </article>
+    </template>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
